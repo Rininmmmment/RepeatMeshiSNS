@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    background: #ffd3ac;
+}
+
+h1{
+    font-weight: lighter;
+}
+
+.start{
+    color: black;
+}
+
+.reg_form{
+    margin: 0 auto;
+}
+
+.login-box{
+    background: white;
+    width: 600px;
+    height: 430px;
+    margin: 100px auto;
+    padding: 30px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.login-box img{
+    width: 250px;
+}
+
+form{
+    margin: 20px 0;
+}
+
+input{
+    border: solid 1px #ff9131;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 3px;
+    width: 280px;
+    background: white;
+}
+
+.touroku{
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border: none;
+    text-decoration: none;
+    background: #ff9131;
+    margin-top: 30px;
+    color: white;
+    width: 130px;
+    position: absolute;
+    left: 50%;
+    top: 460px;
+}
+
+tr{
+    padding-bottom: 15px;
+}
+
+th{
+    font-size: smaller;
+    font-weight: lighter;
+    color: #6c6c6c;
+    padding: 7px 40px 0 0;
+    vertical-align: top;
+    text-align: left;
+}
+
+td{
+    text-align: left;
+}
+
+.helptext{
+    font-size: 5px;
+    width: 100px;
+}
+
+.errorlist{
+    font-size: 12px;
+    color: red;
+    margin: 0 0 5px;
+    padding-left: 15px;
+}
+
+tbody{
+    position: relative;
+}
+

@@ -1,0 +1,86 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<!-- {% load static %} -->
+<!-- <link rel="stylesheet" href="{% static 'css/index.css' %}"> -->
+
+<!-- <a href="">絞り込み</a> -->
+<h1>いままで食べたごはんを見る</h1>
+
+<!-- <div class="tool-container">
+    <a href='/main/random'>ランダムに選ぶ</a>
+    <a href="">絞り込み</a>
+</div> -->
+
+<div class="article-container">
+    <div class="article-box">
+        {% for article in articles %}
+            {% if article.user == request.user %}
+            <a href='{% url "main:detail" article.id %}' class="article">
+                <img src="{{ article.image.url }}"/>
+                <h3>{{ article.food_name }}</h3>
+                <p>{{ article.price }} 円 / {{ article.place }}</p>
+                <!-- <p>{{ article.review }} / 5 点</p> -->
+                <p class="byuser">by {{ article.user }}</p>            
+            </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<h1>友達が食べたごはんを見る</h1>
+
+<div class="article-container">
+    <div class="article-box">
+        {% for article in articles %}
+            {% if article.user != request.user %}
+                <a href='{% url "main:detail" article.id %}' class="article">
+                    <img src="{{ article.image.url }}"/>
+                    <h3>{{ article.food_name }}</h3>
+                    <p>{{ article.price }} 円 / {{ article.place }}</p>
+                    <!-- <p>{{ article.review }} / 5 点</p> -->
+                    <p class="byuser">by {{ article.user }}</p>            
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% for message in messages %}
+<div id="toast">
+    {{ message }}
+</div>
+{% endfor %}
+<script>
+    const toast = document.querySelector("#toast");
+    toast.style.visibility = "visible";
+    setTimeout(function() {
+        toast.style.visibility = "hidden";
+    }, 3000);
+</script>
+<style >
+    #toast {
+        display: flex;
+        visibility: hidden;
+        height: 60px;
+        width: 600px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+        z-index: 999;
+        background-color: #d4edda;
+        position: absolute;
+        top: 0; /* if show bottom, replace to 'bottom: 0;' */
+        left: 414px;
+    }
+    #toast > p {
+        margin: 24px 0;
+        margin-left: 8px;
+        font-family: "Noto Sans CJK JP";
+        font-size: 14px;
+        vertical-align: center;
+        color: #155724;
+        letter-spacing: 0;
+        line-height: 18px;
+    }
+</style>
+
+{% endblock %}

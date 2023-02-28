@@ -1,0 +1,19 @@
+.main-box{
+	padding: 15px;
+	background: skyblue;
+}
+
+.main-box img{
+	height: 340px;
+	width: 340px;
+	object-fit: cover;
+	border-radius: 30px;
+}
+
+.logo{
+	height: 50px;
+}
+
+.menu{
+	height: 40px;
+}

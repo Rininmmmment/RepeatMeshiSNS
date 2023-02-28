@@ -1,0 +1,54 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>りぴめし</title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+</head>
+<body class="hold-transition login-page">
+  <div class="container">
+    <!-- <div class="left-box">
+      あああああああああああああああああああああああああああああああああああああああ
+    </div> -->
+
+    <div class="right-box">
+      <div class="login-box">
+        <img class="logo" src="{% static 'images/logo.jpg' %}">
+        <form action="" method="POST">
+          {% csrf_token %}
+          {% for field in form %}
+            <div class="form-group has-feedback">
+              {{ field }}
+            </div>
+          {% endfor %}
+          <div class="row">
+            {% for error in form.non_field_errors %}
+              <div class="alert alert-danger" role="alert">
+                <p>{{ error }}</p>
+              </div>
+            {% endfor %}
+            <div class="col-xs-4">
+              <button type="submit" class="btn login">ログイン</button>
+            </div>
+            <div>
+              <a href="{% url 'main:index' %}" class="guest-login">登録せず使ってみる</a>
+            </div>
+            <div class="touroku-container">
+              <p>アカウントをお持ちではないですか？</p>
+              <a href="{% url 'accounts:registation' %}" class="btn touroku">新規登録</a>
+            </div>
+            
+          </div>
+        </form>
+      </div>
+      
+
+    </div>
+  </div>
+</body>
+</html>
+

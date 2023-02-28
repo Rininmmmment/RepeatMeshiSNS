@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja" dir="ltr">
+
+<head>
+<meta charset="utf-8">
+<title></title>
+<link rel="stylesheet" href="{% static 'css/registration.css' %}">
+</head>
+
+<body>
+  <div class="right-box">
+    <div class="login-box">
+      <h1>新規登録</h1>
+      {% if AccountCreate %}
+        <p>登録完了しました。</p>
+        <a href="{% url 'accounts:login' %}" class="start">りぴめしを始める</a>
+    
+      {% else %}
+        <div class="reg">
+        <table class="reg_form">
+      
+        <form enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        {{ account_form.as_table }}
+        {{ add_account_form.as_table }}
+        <tr>
+        <input class="touroku" type="submit" name="" value="登録">
+        </tr>
+        </form>
+      
+        </table>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+
+</body>
+</html>

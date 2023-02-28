@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>りぴめし</title>
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+        <link rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="menu-box">
+                <img class="logo" src="{% static 'images/logo.jpg' %}">
+                <a href="/main"><img class="menu" src="{% static 'images/home.jpg' %}?20230130" /></a>
+                <a href="/main/timeline"><img class="menu" src="{% static 'images/timeline.jpg' %}?20230130" /></a>
+                <a href="/main/create"><img class="menu" src="{% static 'images/create.jpg' %}?20230130" /></a>
+            </div>
+            <div class="main-box">
+                <div class="user-container">
+                    {% if request.user.is_anonymous %}
+                        <a href="" class="user">ゲスト さん</a>
+                        <a href="/registration">アカウント登録</a>
+                        <a href="/login">ログイン</a>
+                        
+                    {% else %}
+                        <a href="/main/mypage" class="user">{{ request.user }} さん</a>
+                        <a href="/logout" class="logout-btn">ログアウト<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                    {% endif %}
+                </div>
+                
+                {% block content %}
+                {% endblock %}
+                
+            </div>
+            
+        </div>
+        
+    </body>
+</html>

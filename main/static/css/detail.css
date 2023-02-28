@@ -1,0 +1,49 @@
+*{
+    text-align: center;
+}
+
+.modoru-container{
+    text-align: left;
+    padding: 0 50px 20px;
+}
+
+.modoru{
+    background: rgb(215, 215, 215);
+    display: inline-block;
+    border-radius: 20px;
+    padding: 5px;
+    color: rgb(101, 101, 101);
+    width: 80px;
+}
+
+.detail-container{
+    background: white;
+    border-radius: 30px;
+    margin: 0 auto;
+    width: 500px;
+    padding: 50px;
+}
+
+.detail-container img{
+    width: 400px;
+    height: 400px;
+}
+
+.delete{
+    display: inline-block;
+    background: rgb(255, 80, 80);
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+    width: 100px;
+}
+
+table{
+    margin: 15px auto;
+}
+
+td{
+    text-align: left;
+    border-bottom: solid 0.5px #c3c3c3;
+    padding: 10px 30px 5px;
+}

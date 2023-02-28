@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<h1>みんなの新着投稿</h1>
+<div class="article-container">
+    <div class="article-box">
+        {% for article in articles %}
+                <a href='{% url "main:detail" article.id %}' class="article">
+                    <img src="{{ article.image.url }}"/>
+                    <h3>{{ article.food_name }}</h3>
+                    <p>{{ article.price }} 円 / {{ article.place }}</p>
+                    <!-- <p>{{ article.review }} / 5 点</p> -->
+                    <p class="byuser">by {{ article.user }}</p>            
+                </a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,99 @@
+body{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.user-container{
+    text-align: right;
+    margin-bottom: 50px;
+}
+
+.user{
+    font-size: 25px;
+    padding: 10px;
+}
+
+.container{
+    display: flex;
+}
+
+.menu-box{
+    width: 205px;
+    padding: 15px 30px;
+    border-right: solid 0.1px #c0c0c0;
+}
+
+.logo{
+	height: 50px;
+    margin: 0 0 60px 0;
+}
+
+.tool-container{
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.tool-container a{
+    display: inline-block;
+    text-align: center;
+    border: solid 0.1px #c0c0c0;
+    border-radius: 10px;
+    width: 150px;
+    padding: 5px;
+    color: #6f6f6f;
+    margin-right: 5px;
+}
+
+.menu{
+	width: 200px;
+    margin-bottom: 30px;
+}
+
+.main-box{
+    width: 1200px;
+	padding: 20px 50px;
+    background: #ffefe1;
+}
+
+.main-box img{
+	height: 300px;
+	width: 300px;
+	object-fit: cover;
+	border-radius: 30px;
+}
+
+.article-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.article{
+    display: block;
+    width: 300px;
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    text-align: center;
+    padding-bottom: 30px;
+    background: white;
+    border-radius: 30px;
+}
+
+.article h3{
+    font-weight: 800;
+    font-size: larger;
+    margin: 20px 0 5px;
+}
+
+.article p{
+    margin: 0;
+}
+
+.byuser{
+    color: gray;
+    font-size: smaller;
+}

@@ -1,0 +1,12 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% load static %}
+<!-- {% load bootstrap4 %} -->
+<link rel="stylesheet" href="{% static 'css/create.css' %}">
+<!-- <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' > -->
+<form enctype="multipart/form-data" action='' method='POST' class='form'>
+    {% csrf_token %}
+    {% bootstrap_form form layout='horizontal' %}
+    <button type='submit' class='btn'>投稿する</button>
+</form>
+{% endblock %}
