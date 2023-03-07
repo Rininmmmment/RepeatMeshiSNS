@@ -1,17 +1,20 @@
 from pathlib import Path
 import os
 
-DEBUG = False
+DEBUG = True
 
-try:
-  from .local_settings import *
-except ImportError:
-  pass
+SECRET_KEY = 'django-insecure--nlu6ehctivcuj)w80%02gc3a&f!!jg+yabq9lkdc7a^ymc-e('
 
-if not DEBUG:
-  SECRET_KEY = os.environ['SECRET_KEY']
-  DATABASES = os.environ['DATABASES']
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'RepeatMeshiDB',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': '/Applications/MAMP/tmp/mysql/mysql.sock',
+        'PORT': '8889',
+    }
+}
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
